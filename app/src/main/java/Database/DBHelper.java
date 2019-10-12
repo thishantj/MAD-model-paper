@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + UserProfile.Users.TABLE_NAME + " (" +
                     UserProfile.Users.COLUMN_1 + " INTEGER PRIMARY KEY," +
                     UserProfile.Users.COLUMN_2 + " TEXT," +
-                    UserProfile.Users.COLUMN_3 + " DATE," +
+                    UserProfile.Users.COLUMN_3 + " TEXT," +
                     UserProfile.Users.COLUMN_4 + " TEXT)";
 
     //@Override
@@ -62,6 +62,24 @@ public class DBHelper extends SQLiteOpenHelper {
         long newRowId = db.insert(UserProfile.Users.TABLE_NAME, null, values);
 
         if(newRowId == 1)
+            return true;
+        else
+            return false;
+    }
+
+    public Boolean updateInfor(int ID, String username, String dob, String gender){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(UserProfile.Users.COLUMN_1, ID);
+        values.put(UserProfile.Users.COLUMN_2, username);
+        values.put(UserProfile.Users.COLUMN_3, dob);
+        values.put(UserProfile.Users.COLUMN_4, gender);
+
+        int count = db.update(UserProfile.Users.TABLE_NAME, values, "_ID=?", new String[]{Integer.toString(ID)});
+
+        if (count == 1)
             return true;
         else
             return false;
