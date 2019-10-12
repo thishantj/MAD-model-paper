@@ -2,6 +2,7 @@ package Database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -10,6 +11,8 @@ import androidx.annotation.Nullable;
 import com.example.it18067316.UserProfile;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -83,5 +86,31 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+    public Cursor readAllInfor(int ID, String username, String dob, String gender){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] projection = {
+                UserProfile.Users.COLUMN_1,
+                UserProfile.Users.COLUMN_2,
+                UserProfile.Users.COLUMN_3,
+                UserProfile.Users.COLUMN_4
+        };
+
+        Cursor cursor = db.query(UserProfile.Users.TABLE_NAME, projection, "_ID", new String[]{Integer.toString(ID)}, null, null, null);
+
+        return cursor;
+    }
+
+    public int deleteInfo(int ID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String selection = UserProfile.Users.COLUMN_1 + " LIKE ?";
+
+        int deletedRows = db.delete(UserProfile.Users.TABLE_NAME, selection, new String[]{Integer.toString(ID)});
+
+        return deletedRows;
     }
 }
