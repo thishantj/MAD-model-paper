@@ -88,6 +88,12 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
+    public Cursor readAllinfor(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cu = db.rawQuery("select * from " + UserProfile.Users.TABLE_NAME,null);
+        return cu;
+    }
+
     public Cursor readAllInfor(int ID, String username, String dob, String gender){
         SQLiteDatabase db = this.getReadableDatabase();
 
