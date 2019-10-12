@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IT18067316</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnRegister">Register</string>
+    <string name="radioMale">Male</string>
+    <string name="radioFemale">Female</string>
+    <string name="update">Update Profile</string>
+    <string name="gender">Gender</string>
+    <string name="dob">Date of birth</string>
+    <string name="btnedit">Edit</string>
+    <string name="btndelete">Delete</string>
+    <string name="btnsearch">Search</string>
+</resources>
