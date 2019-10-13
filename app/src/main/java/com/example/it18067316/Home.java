@@ -44,18 +44,18 @@ public class Home extends AppCompatActivity {
         if (datai == true)
         {
             Toast.makeText(getApplicationContext(),"Successfully inserted",Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, ProfileManagement.class);
+
+            intent.putExtra(USERNAME, uname);
+            intent.putExtra(PASSWORD, passw);
+
+            startActivity(intent);
         }
         else
         {
             Toast.makeText(getApplicationContext(),"Error in insertion",Toast.LENGTH_SHORT).show();
         }
-
-        Intent intent = new Intent(this, ProfileManagement.class);
-
-        intent.putExtra(USERNAME, uname);
-        intent.putExtra(PASSWORD, passw);
-
-        startActivity(intent);
     }
 
 }
