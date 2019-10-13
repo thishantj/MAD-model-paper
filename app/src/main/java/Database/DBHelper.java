@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + UserProfile.Users.TABLE_NAME + " (" +
-                    UserProfile.Users.COLUMN_1 + " INTEGER PRIMARY KEY," +
+                    UserProfile.Users.COLUMN_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     UserProfile.Users.COLUMN_2 + " TEXT," +
                     UserProfile.Users.COLUMN_3 + " TEXT," +
                     UserProfile.Users.COLUMN_4 + " TEXT)";
@@ -50,13 +50,13 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public Boolean addInfo(int ID, String username, String dob, String gender) {
+    public Boolean addInfo(String username, String dob, String gender) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
 
-        values.put(UserProfile.Users.COLUMN_1, ID);
+        //values.put(UserProfile.Users.COLUMN_1, ID);
         values.put(UserProfile.Users.COLUMN_2, username);
         values.put(UserProfile.Users.COLUMN_3, dob);
         values.put(UserProfile.Users.COLUMN_4, gender);
@@ -75,7 +75,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
 
-        values.put(UserProfile.Users.COLUMN_1, ID);
+        //values.put(UserProfile.Users.COLUMN_1, ID);
         values.put(UserProfile.Users.COLUMN_2, username);
         values.put(UserProfile.Users.COLUMN_3, dob);
         values.put(UserProfile.Users.COLUMN_4, gender);
@@ -88,13 +88,14 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
+
     public Cursor readAllinfor(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cu = db.rawQuery("select * from " + UserProfile.Users.TABLE_NAME,null);
         return cu;
     }
 
-    public Cursor readAllInfor(int ID, String username, String dob, String gender){
+    public Cursor readAllInfor(int ID){
         SQLiteDatabase db = this.getReadableDatabase();
 
         String[] projection = {
@@ -108,6 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
+
 
     public int deleteInfo(int ID){
 

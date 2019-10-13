@@ -36,20 +36,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtPassword"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtPassword2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <RadioButton
-        android:id="@+id/rbtnMale2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/radioMale"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rbtnFemale2"
+
+    <RadioGroup
+        android:layout_width="315dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="53dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rbtnMale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/rbtnMale"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="@string/radioMale"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rbtnFemale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/rbtnFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radioFemale"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.913"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.637" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/textView11"
@@ -72,7 +107,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -96,27 +131,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rbtnMale2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioButton
-        android:id="@+id/rbtnFemale2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/radioFemale"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
 
     <EditText
         android:id="@+id/txtusername3"
