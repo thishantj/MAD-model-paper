@@ -43,6 +43,7 @@
 
 
     <RadioGroup
+        android:id="@+id/rgender2"
         android:layout_width="315dp"
         android:layout_height="32dp"
         android:layout_marginEnd="53dp"

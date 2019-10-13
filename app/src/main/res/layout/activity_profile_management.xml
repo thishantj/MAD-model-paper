@@ -37,6 +37,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
+        android:id="@+id/rgender"
         android:layout_width="349dp"
         android:layout_height="28dp"
         android:orientation="horizontal"
